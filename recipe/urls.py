@@ -15,7 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from auth.urls import urlpatterns as auth_urls
+from recipe_app.urls import urlpatterns as recipe_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
+
+urlpatterns += auth_urls
+urlpatterns += recipe_urls
+
