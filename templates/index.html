@@ -1,1 +1,7 @@
-<h1>Hello Foodies</h1>
+{% extends "base.html" %}
+
+{% block body %}
+
+<h1>Hello {{user.username}}</h1>
+
+{% endblock %}
