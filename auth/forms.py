@@ -15,7 +15,7 @@ class SignUpForm(UserCreationForm):
 
     class Meta:
         model = RecipeUser
-        fields = ('email', 'display_name', 'password1', 'password2')
+        fields = ('email', 'username', 'display_name', 'password1', 'password2')
 
 class LoginForm(forms.Form):
     username = forms.CharField(max_length=100)

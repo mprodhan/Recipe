@@ -4,4 +4,17 @@
 
 <h1>Hello {{user.username}}</h1>
 
+<h1>Recipe Lists</h1>
+
+{% for da in data %}
+    <h4>Recipe</h4>
+    <p>{{da.title}}</p>
+    <h4>Ingredients</h4>
+    <p>{{da.ingredients}}</p>
+    <h4>Directions</h4>
+    <p>{{da.directions}}</p>
+    <p>Posted on {{da.date}}</p>
+
+{% endfor %}
+
 {% endblock %}
