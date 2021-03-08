@@ -17,4 +17,14 @@
 
 {% endfor %}
 
+<h1>Blog</h1>
+
+{% for write in writes %}
+    <h4>Title</h4>
+    <p>{{write.blog_title}}</p>
+    <p>{{write.blog_body}}</p>
+    <p>Posted on {{write.date}}</p>
+
+{% endfor %}
+
 {% endblock %}
