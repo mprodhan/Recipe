@@ -38,5 +38,5 @@ def loginview(request):
 
 def logout(request):
     logout(request)
-    return HttpResponseRedirect(reverse('login'))
+    return HttpResponseRedirect(reverse('homepage'))
 
