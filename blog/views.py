@@ -1,3 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, reverse, HttpResponseRedirect, \
+    HttpResponse
 
-# Create your views here.
+from blog.models import Blog
+
+
