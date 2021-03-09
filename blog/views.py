@@ -3,6 +3,7 @@ from django.shortcuts import render, reverse, HttpResponseRedirect, \
 
 from blog.models import Blog
 from blog.forms import BlogForm
+from recipe_user.models import RecipeUser
 
 def bloginsert(request):
     html = "blog.html"
@@ -20,3 +21,12 @@ def bloginsert(request):
         form = BlogForm()
     context = {'form': form}
     return render(request, html, context)
+
+def blogdetail(request, id):
+    html = "blog_view.html"
+    author = RecipeUser.objects.get(id=id)
+    author = request.user
+    blogs = Blog.objects.filter(id=id)
+    context = {'author': author, 'blogs': blogs}
+    return render(request, html, context)
+

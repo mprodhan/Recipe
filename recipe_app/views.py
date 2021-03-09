@@ -3,6 +3,7 @@ from django.shortcuts import render, reverse, HttpResponseRedirect, \
 
 from django.shortcuts import render
 from recipe_app.models import Food
+from recipe_user.models import RecipeUser
 from recipe_app.forms import RecipeForm
 from blog.models import Blog
 
@@ -29,4 +30,13 @@ def recipe(request):
     else:
         form = RecipeForm()
     context = {'form': form}
+    return render(request, html, context)
+
+
+def recipedetail(request, id):
+    html = "recipe_view.html"
+    author = RecipeUser.objects.get(id=id)
+    author = request.user
+    recipe = Food.objects.filter(id=id)
+    context = {'author': author, 'recipe': recipe}
     return render(request, html, context)

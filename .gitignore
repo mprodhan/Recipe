@@ -214,5 +214,6 @@ dmypy.json
 
 # extras
 tech.txt
+.vscode
 
 # End of https://www.toptal.com/developers/gitignore/api/django,python

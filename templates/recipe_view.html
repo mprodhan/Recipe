@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+{% for recip in recipe %}
+
+<h3>{{recip.title}}</h3>
+<p>by {{user.username}}</p>
+<p>{{recip.ingredients}}</p>
+<p>{{recip.directions}}</p>
+<p>Posted on {{recip.date}}</p>
+
+
+{% endfor %}
+
+{% endblock %}
