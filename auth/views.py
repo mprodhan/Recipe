@@ -1,6 +1,7 @@
 from django.shortcuts import render, reverse, HttpResponseRedirect, \
     HttpResponse
-from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth import login, authenticate
+from django.contrib.auth import logout as recipe_logout
 from django.contrib.auth.forms import UserCreationForm
 
 from auth.forms import LoginForm, SignUpForm
@@ -37,6 +38,5 @@ def loginview(request):
     return render(request, html, context)
 
 def logout(request):
-    logout(request)
-    return HttpResponseRedirect(reverse('homepage'))
-
+    recipe_logout(request)
+    return HttpResponseRedirect(reverse('login'))

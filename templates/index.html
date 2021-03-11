@@ -7,8 +7,12 @@
 <h1>Recipe Lists</h1>
 
 {% for da in data %}
+
     <h4>Recipe</h4>
-    <p>{{da.title}} by {{user.username}}</p>
+    <p>
+        <a href="/recipe_detail/{{da.id}}/">{{da.title}}</a>
+        by {{da.recipe_author}}
+    </p>
     <h4>Ingredients</h4>
     <p>{{da.ingredients}}</p>
     <h4>Directions</h4>
@@ -18,10 +22,15 @@
 {% endfor %}
 
 <h1>Blog</h1>
+<a href="{% url 'bloginsert'%}">Blog Here</a>
 
 {% for write in writes %}
+
     <h4>Title</h4>
-    <p>{{write.blog_title}}</p>
+    <p>
+        <a href="/blog_detail/{{write.id}}/">{{write.blog_title}}</a> 
+        by {{write.blog_author}}
+    </p>
     <p>{{write.blog_body}}</p>
     <p>Posted on {{write.date}}</p>
 
