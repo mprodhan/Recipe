@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<p>Name: {{profilers.display_name}}</p>
+<p>Username: {{profilers.username}}</p>
+<p>Date Joined: {{profilers.date_joined}}</p>
+
+<h1>Recipe Links</h1>
+
+{% for profile in profiles %}
+
+<a href="{% url 'recipe' id=profile.id %}">{{profile.title}}</a>
+
+{% endfor %}
+
+<h1>Blog Links</h1>
+
+{% for blog in blogs %}
+
+<a href="{% url 'blog' id=blog.id %}">{{blog.blog_title}}</a>
+
+{% endfor %}
+
+
+{% endblock %}

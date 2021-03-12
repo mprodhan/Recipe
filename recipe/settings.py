@@ -38,9 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # installed from created app modules
     'recipe_app.apps.RecipeAppConfig',
     'recipe_user.apps.RecipeUserConfig',
     'blog.apps.BlogConfig',
+    'recipe_profile.apps.RecipeProfileConfig'
 ]
 
 MIDDLEWARE = [

@@ -1,8 +1,6 @@
 {% extends "base.html" %}
 
 {% block body %}
-<a href="/blog/{{blog.id}}"></a>
-<a href="{% url 'bloginsert'%}">Blog Here</a>
 
 <!-- needs work, the link is not working due to a .id issue -->
 {% for blog in blogs %}
