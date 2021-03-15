@@ -1,10 +1,12 @@
 from django.shortcuts import render, reverse, HttpResponseRedirect, \
     HttpResponse
+from django.contrib.auth.decorators import login_required
 
 from blog.models import Blog
 from blog.forms import BlogForm
 from recipe_user.models import RecipeUser
 
+@login_required
 def bloginsert(request):
     html = "blog.html"
     if request.method == "POST":
@@ -22,6 +24,7 @@ def bloginsert(request):
     context = {'form': form}
     return render(request, html, context)
 
+@login_required
 def blogdetail(request, id):
     html = "blog_view.html"
     author = RecipeUser.objects.get(id=id)

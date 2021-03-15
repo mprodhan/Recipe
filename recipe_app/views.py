@@ -1,5 +1,6 @@
 from django.shortcuts import render, reverse, HttpResponseRedirect, \
     HttpResponse
+from django.contrib.auth.decorators import login_required
 
 from django.shortcuts import render
 from recipe_app.models import Food
@@ -14,6 +15,7 @@ def index(request):
     context = {'data': data, 'writes': writes}
     return render(request, html, context)
 
+@login_required
 def recipe(request):
     html = "recipe.html"
     if request.method == "POST":
@@ -32,7 +34,7 @@ def recipe(request):
     context = {'form': form}
     return render(request, html, context)
 
-
+@login_required
 def recipedetail(request, id):
     html = "recipe_view.html"
     author = RecipeUser.objects.get(id=id)
