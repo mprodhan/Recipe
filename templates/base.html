@@ -17,7 +17,16 @@
 
     <a href="{% url 'bloginsert'%}">Blog Here</a>
 
+    {% comment %}
+    <a href="{% url 'profile' profile.id %}">{{profilers.display_name}}</a>
+    {% endcomment %}
+
+
+
+
     {% block body %}
+
+
 
     {% endblock %}
 </body>

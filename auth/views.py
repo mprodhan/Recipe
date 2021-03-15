@@ -39,4 +39,4 @@ def loginview(request):
 
 def logout(request):
     recipe_logout(request)
-    return HttpResponseRedirect(reverse('login'))
+    return HttpResponseRedirect(reverse('homepage'))
