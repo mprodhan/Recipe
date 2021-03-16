@@ -7,12 +7,12 @@ from recipe_user.models import RecipeUser
 from blog.models import Blog
 
 @login_required
-def profileview(request, id):
+def profileview(request, username):
     html = "profile.html"
-    profilers = RecipeUser.objects.get(id=id)
+    profilers = RecipeUser.objects.get(username=username)
     profilers = request.user
-    profiles = Food.objects.filter(id=id)
-    blogs = Blog.objects.filter(id=id)
+    profiles = Food.objects.filter(recipe_author=profilers)
+    blogs = Blog.objects.filter(blog_author=profilers)
     context = {'profilers': profilers, 'profiles': profiles, \
         'blogs': blogs}
     return render(request, html, context)

@@ -5,7 +5,7 @@
 {% for recip in recipe %}
 
 <h3>{{recip.title}}</h3>
-<p>by {{user.username}}</p>
+<p>by {{recip.recipe_author}}</p>
 <p>{{recip.ingredients}}</p>
 <p>{{recip.directions}}</p>
 <p>Posted on {{recip.date}}</p>

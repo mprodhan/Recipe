@@ -10,7 +10,7 @@
 
 {% for profile in profiles %}
 
-<a href="{% url 'recipe' id=profile.id %}">{{profile.title}}</a>
+<a href="/recipe_detail/{{profile.recipe_author}}/">{{profile.title}}</a>
 
 {% endfor %}
 
@@ -18,7 +18,7 @@
 
 {% for blog in blogs %}
 
-<a href="{% url 'blog' id=blog.id %}">{{blog.blog_title}}</a>
+<a href="/blog_detail/{{blog.blog_author}}/">{{blog.blog_title}}</a>
 
 {% endfor %}
 

@@ -14,8 +14,8 @@ def bloginsert(request):
         if form.is_valid():
             data = form.cleaned_data
             Blog.objects.create(
-                title=data['title'],
-                body=data['body'],
+                blog_title=data['title'],
+                blog_body=data['body'],
                 blog_author=data['author']
             )
             return HttpResponseRedirect(reverse('homepage'))
@@ -25,11 +25,11 @@ def bloginsert(request):
     return render(request, html, context)
 
 @login_required
-def blogdetail(request, id):
+def blogdetail(request, username):
     html = "blog_view.html"
-    author = RecipeUser.objects.get(id=id)
+    author = RecipeUser.objects.get(username=username)
     author = request.user
-    blogs = Blog.objects.filter(id=id)
+    blogs = Blog.objects.filter(blog_author=author)
     context = {'author': author, 'blogs': blogs}
     return render(request, html, context)
 

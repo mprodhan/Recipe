@@ -35,10 +35,10 @@ def recipe(request):
     return render(request, html, context)
 
 @login_required
-def recipedetail(request, id):
+def recipedetail(request, username):
     html = "recipe_view.html"
-    author = RecipeUser.objects.get(id=id)
+    author = RecipeUser.objects.get(username=username)
     author = request.user
-    recipe = Food.objects.filter(id=id)
+    recipe = Food.objects.filter(recipe_author=author)
     context = {'author': author, 'recipe': recipe}
     return render(request, html, context)

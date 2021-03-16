@@ -2,7 +2,7 @@
 
 {% block body %}
 
-<h1>Hello {{user.username}}</h1>
+<h1>Hello <a href="/profile/{{user.username}}">{{user.username}}</a></h1>
 
 <h1>Recipe Lists</h1>
 
@@ -10,7 +10,7 @@
 
     <h4>Recipe</h4>
     <p>
-        <a href="{% url 'recipe' id=da.id %}">{{da.title}}</a>
+        <a href="/recipe_detail/{{da.recipe_author}}/">{{da.title}}</a>
         by {{da.recipe_author}}
     </p>
     <h4>Ingredients</h4>
@@ -22,14 +22,13 @@
 {% endfor %}
 
 <h1>Blog</h1>
-<a href="{% url 'bloginsert'%}">Blog Here</a>
+<a href="{% url 'bloginsert' %}">Blog Here</a>
 
 {% for write in writes %}
 
     <h4>Title</h4>
     <p>
-        <a href="{% url 'blog' id=write.id %}">{{write.blog_title}}</a>
-        by {{write.blog_author}}
+        {{write.blog_title}} <a href="/blog_detail/{{write.blog_author}}">by {{write.blog_author}}</a>
     </p>
     <p>{{write.blog_body}}</p>
     <p>Posted on {{write.date}}</p>
