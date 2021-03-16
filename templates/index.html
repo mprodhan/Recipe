@@ -2,17 +2,18 @@
 
 {% block body %}
 
-<h1>Hello <a href="/profile/{{user.username}}">{{user.username}}</a></h1>
+<h1>Hello 
+    <a href="/profile/{{user.username}}">{{user.username}}</a>
+</h1>
 
-<h1>Recipe Lists</h1>
+<h1>Recipe Lists</h1><hr>
 
 {% for da in data %}
 
-    <h4>Recipe</h4>
-    <p>
+    <h3>
         <a href="/recipe_detail/{{da.recipe_author}}/">{{da.title}}</a>
         by {{da.recipe_author}}
-    </p>
+    </h3>
     <h4>Ingredients</h4>
     <p>{{da.ingredients}}</p>
     <h4>Directions</h4>
@@ -20,19 +21,21 @@
     <p>Posted on {{da.date}}</p>
 
 {% endfor %}
+<hr>
 
 <h1>Blog</h1>
-<a href="{% url 'bloginsert' %}">Blog Here</a>
+<a href="{% url 'bloginsert' %}">Blog Here</a><hr>
 
 {% for write in writes %}
 
-    <h4>Title</h4>
-    <p>
-        {{write.blog_title}} <a href="/blog_detail/{{write.blog_author}}">by {{write.blog_author}}</a>
-    </p>
+    <h3>
+        <a href="/blog_detail/{{write.blog_author}}">{{write.blog_title}}</a>
+        by {{write.blog_author}}</a>
+    </h3>
     <p>{{write.blog_body}}</p>
     <p>Posted on {{write.date}}</p>
 
 {% endfor %}
+<hr>
 
 {% endblock %}
