@@ -3,12 +3,13 @@
 {% block body %}
 
 {% for recip in recipe %}
-
-<h3>{{recip.title}}</h3>
-<p>by {{recip.recipe_author}}</p>
-<p>{{recip.ingredients}}</p>
-<p>{{recip.directions}}</p>
-<p>Posted on {{recip.date}}</p>
+<ul>
+    <h3>{{recip.title}}</h3>
+    <p>by {{recip.recipe_author}}</p>
+    <p>{{recip.ingredients}}</p>
+    <p>{{recip.directions}}</p>
+    <p>Posted on {{recip.date}}</p>
+</ul>
 
 
 {% endfor %}

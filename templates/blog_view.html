@@ -4,10 +4,11 @@
 
 <!-- needs work, the link is not working due to a .id issue -->
 {% for blog in blogs %}
-
-<h3>{{blog.blog_title}} by {{blog.blog_author}}</h3>
-<p>{{blog.blog_body}}</p>
-<p>Posted on {{blog.date}}</p>
+<ul>
+    <h3>{{blog.blog_title}} by {{blog.blog_author}}</h3>
+    <p>{{blog.blog_body}}</p>
+    <p>Posted on {{blog.date}}</p>
+</ul>
 
 {% endfor %}
 
