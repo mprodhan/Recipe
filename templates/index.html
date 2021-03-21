@@ -18,6 +18,7 @@
     <p>{{da.ingredients}}</p>
     <h4>Directions</h4>
     <p>{{da.directions}}</p>
+    <img src="{{da.image.url}}" alt="image">
     <p>Posted on {{da.date}}</p>
 
 {% endfor %}
@@ -29,10 +30,11 @@
 {% for write in writes %}
 
     <h3>
-        <a href="/blog_detail/{{write.blog_author}}">{{write.blog_title}}</a>
+        <a href="/blog_detail/{{write.blog_author}}/">{{write.blog_title}}</a>
         by {{write.blog_author}}</a>
     </h3>
     <p>{{write.blog_body}}</p>
+    <img src="{{write.blog_image.url}}" alt="blog_image">
     <p>Posted on {{write.date}}</p>
 
 {% endfor %}

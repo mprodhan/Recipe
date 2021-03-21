@@ -10,7 +10,7 @@ from recipe_user.models import RecipeUser
 def bloginsert(request):
     html = "blog.html"
     if request.method == "POST":
-        form = BlogForm(request.POST)
+        form = BlogForm(request.POST, request.FILES)
         if form.is_valid():
             data = form.cleaned_data
             Blog.objects.create(

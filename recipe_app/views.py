@@ -19,7 +19,7 @@ def index(request):
 def recipe(request):
     html = "recipe.html"
     if request.method == "POST":
-        form = RecipeForm(request.POST)
+        form = RecipeForm(request.POST, request.FILES)
         if form.is_valid():
             data = form.cleaned_data
             Food.objects.create(

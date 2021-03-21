@@ -1,3 +1,4 @@
+import os
 from django.db import models
 from django.utils import timezone
 from PIL import Image
@@ -18,7 +19,7 @@ class Food(models.Model):
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
         upload_img = Image.open(self.image.path)
-        if upload_img.height > 300 or upload_img > 300:
+        if upload_img.height > 300 or upload_img.width > 300:
             output_size = (300,300)
             upload_img.thumbnail(output_size)
             upload_img.save(self.image.path)
