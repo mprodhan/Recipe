@@ -7,6 +7,7 @@ class Food(models.Model):
     ingredients = models.TextField()
     directions = models.TextField()
     date = models.DateTimeField(default=timezone.now)
+    image = models.ImageField(upload_to='media/')
     recipe_author = models.ForeignKey(RecipeUser, on_delete=models.CASCADE)
 
     def __str__(self):
