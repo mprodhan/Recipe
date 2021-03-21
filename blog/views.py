@@ -16,7 +16,8 @@ def bloginsert(request):
             Blog.objects.create(
                 blog_title=data['title'],
                 blog_body=data['body'],
-                blog_author=data['author']
+                blog_author=data['author'],
+                blog_image=data['image']
             )
             return HttpResponseRedirect(reverse('homepage'))
     else:

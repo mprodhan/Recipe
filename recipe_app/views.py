@@ -26,7 +26,8 @@ def recipe(request):
                 title=data['title'],
                 ingredients=data['ingredients'],
                 directions=data['directions'],
-                recipe_author=data['author']
+                recipe_author=data['author'],
+                image=data['image']
             )
             return HttpResponseRedirect(reverse('homepage'))
     else:
