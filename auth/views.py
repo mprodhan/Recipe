@@ -5,6 +5,7 @@ from django.contrib.auth import logout as recipe_logout
 from django.contrib.auth.forms import UserCreationForm
 
 from auth.forms import LoginForm, SignUpForm
+from recipe_user.models import RecipeUser
 
 def signupview(request):
     html = "signup.html"

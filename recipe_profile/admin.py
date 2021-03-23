@@ -1,3 +1,4 @@
 from django.contrib import admin
+from recipe_profile.models import ProfileImage
 
-# Register your models here.
+admin.site.register(ProfileImage)
